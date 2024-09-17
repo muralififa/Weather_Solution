@@ -51,6 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'WeatherAnalysisSystem.urls'
+ALLOWED_HOSTS = ['weather-solution.onrender.com']
 
 TEMPLATES = [
     {
