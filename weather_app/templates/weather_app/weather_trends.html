@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Trends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Load static files correctly -->
+    {% load static %}
+    <link href="{% static 'narrow-jumbotron.css' %}" rel="stylesheet">
+    <link href="{% static 'css/editor.css' %}" rel="stylesheet">
+
+    <style>
+        body, html {
+            font-family: 'Times New Roman', Times, serif;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+        .header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px; /* Reduced padding */
+        }
+        .alert {
+            padding: 20px;
+            background-color: red;
+            color: white;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        .table {
+            margin-bottom: 0; /* Remove extra bottom margin */
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn-back {
+            display: block;
+            margin: 20px 0; /* Margin around the button */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h3 class="text-muted">Weather Finder</h3>
+    <nav>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'get_weather_data' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container">
+    <!-- Display Alert for Extreme Weather Conditions -->
+    {% if extreme_conditions %}
+    <div class="alert">
+        <strong>Alert!</strong> {{ alert_message }}
+    </div>
+    {% endif %}
+
+    <h1 class="mb-3">Current Weather</h1>
+
+    <!-- Display Current Weather Information -->
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <td><strong>Location Name</strong></td>
+                <td>{{ current_weather.location_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Region</strong></td>
+                <td>{{ current_weather.region }}</td>
+            </tr>
+            <tr>
+                <td><strong>Temperature (°C)</strong></td>
+                <td>{{ current_weather.temp_c }}</td>
+            </tr>
+            <tr>
+                <td><strong>Humidity (%)</strong></td>
+                <td>{{ current_weather.humidity }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <h1 class="mb-3">Weather Trends for the Last 24 Hours</h1>
+
+    <!-- Display Hourly Weather Trends -->
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Time</th>
+                    {% for data in hourly_data %}
+                        <th>{{ data.time|date:"g A" }}</th> <!-- Formats time as 12 AM, 1 AM, etc. -->
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Temperature (°C)</strong></td>
+                    {% for data in hourly_data %}
+                        <td>{{ data.temp_c }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td><strong>Feels Like (°C)</strong></td>
+                    {% for data in hourly_data %}
+                        <td>{{ data.feelslike_c }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td><strong>Humidity (%)</strong></td>
+                    {% for data in hourly_data %}
+                        <td>{{ data.humidity }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td><strong>Condition</strong></td>
+                    {% for data in hourly_data %}
+                        <td>{{ data.condition_text }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td><strong>Chance of Rain (%)</strong></td>
+                    {% for data in hourly_data %}
+                        <td>{{ data.chance_of_rain }}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="btn-back">
+        <a href="{% url 'get_weather_data' %}" class="btn btn-secondary">Go Back</a>
+    </div>
+</div>
+
+</body>
+</html>

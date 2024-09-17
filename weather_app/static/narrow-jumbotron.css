@@ -1,0 +1,23 @@
+.jumbotron {
+    background-color: #f0f0f0; /* Light gray background for contrast */
+    padding: 40px 20px; /* Spacious padding for jumbotron */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center align text */
+}
+
+.jumbotron h1 {
+    font-size: 2.5rem; /* Large heading for impact */
+    font-weight: 700; /* Bold for emphasis */
+    margin-bottom: 20px;
+}
+
+.jumbotron p {
+    font-size: 1.2rem; /* Slightly larger than normal text */
+    color: #666; /* Muted color for subheadings */
+}
+
+.jumbotron .btn {
+    margin-top: 20px; /* Space above buttons */
+    padding: 10px 20px; /* Comfortable padding for buttons */
+    font-size: 1rem; /* Standard button text size */
+}
