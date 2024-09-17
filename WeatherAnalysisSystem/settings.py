@@ -20,10 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w^7r^-rent6%-ve&sn0k*kt$-4)l@-x=s7vxx_ef4f-yv3&z%d'
+SECRET_KEY = 'DJANGO_SECRECT_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -51,7 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'WeatherAnalysisSystem.urls'
-ALLOWED_HOSTS = ['weather-solution.onrender.com','127.0.0.1',]
+#ALLOWED_HOSTS = ['weather-solution.onrender.com','127.0.0.1',]
 
 TEMPLATES = [
     {
@@ -118,17 +118,34 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
+# # STATICFILES_DIRS = [
+# #     BASE_DIR / "static",  # Adjust BASE_DIR based on your project structure
+# # ]
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# # Additional locations the staticfiles app will traverse if the FileSystemFinder finder is enabled.
 # STATICFILES_DIRS = [
-#     BASE_DIR / "static",  # Adjust BASE_DIR based on your project structure
+#     os.path.join(BASE_DIR, 'static'),  # Ensure this points to your static folder
 # ]
 
+DEBUG = False
+
+ALLOWED_HOSTS = ['weather-solution.onrender.com', '127.0.0.1']
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Additional locations the staticfiles app will traverse if the FileSystemFinder finder is enabled.
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Ensure this points to your static folder
 ]
+
+# Collect static files
+# Ensure `collectstatic` is run after every deployment
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
