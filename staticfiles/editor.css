@@ -1,0 +1,31 @@
+body {
+    font-family: 'Arial', sans-serif; /* General font for the page */
+    line-height: 1.6; /* Improved readability */
+}
+
+input, textarea {
+    border: 1px solid #ccc; /* Basic border for form controls */
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+button {
+    background-color: #28a745; /* Bootstrap's success color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838; /* Darker shade for hover effect */
+}
+
+.container {
+    max-width: 900px; /* Constrain width for better readability */
+    margin: 0 auto; /* Center container */
+    padding: 20px;
+}
