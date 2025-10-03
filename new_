@@ -1,0 +1,16 @@
+Subject: Access Denied Issue on PythonJobs Directory in Non-Prod
+
+Hi Team,
+
+During analysis of the automation failure in the non-prod server, I compared folder permissions between C:\iHUBDBIDS (working) and C:\PythonJobs (failing).
+
+Findings:
+	•	iHUBDBIDS has explicit Full Control for Everyone, and jobs run fine.
+	•	PythonJobs has inheritance enabled, but the parent folder does not pass down the necessary permissions for the automation service account.
+	•	Only my user (US) was added explicitly, which is why I can access it, but the scheduled automation still fails with “Access is Denied.”
+
+Action Required:
+	•	Grant the automation service account explicit Read & Execute (or Modify, if needed) permissions on C:\PythonJobs.
+	•	Alternatively, adjust permissions at the parent folder so that the account inherits proper access.
+
+This change should bring PythonJobs in line with iHUBDBIDS and allow automation jobs to run successfully.
