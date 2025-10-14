@@ -1,8 +1,13 @@
-Hi Vikram,
+import os
+import glob
 
-I understand, but due to an unavoidable personal situation related to relocation and hospitalization, I kindly request you to reconsider my early release on 15th October. I’ve completed all my activities and KT, and the transition is already in place.
+def get_newest_file(dir_path):
+    # Get list of all files in the directory
+    list_of_files = glob.glob(os.path.join(dir_path, '*'))
+    # Find the file with the latest modification time
+    newest_file = max(list_of_files, key=os.path.getmtime)
+    return newest_file
 
-Requesting your support and understanding.
-
-Best regards,
-Murali
+# Example usage
+dir_path = '/Users/YOURUSERNAME/DBID_Automation/Report'
+print(get_newest_file(dir_path))
