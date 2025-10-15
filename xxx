@@ -1,13 +1,14 @@
-import os
-import glob
+A Heartfelt Thank You 💙
 
-def get_newest_file(dir_path):
-    # Get list of all files in the directory
-    list_of_files = glob.glob(os.path.join(dir_path, '*'))
-    # Find the file with the latest modification time
-    newest_file = max(list_of_files, key=os.path.getmtime)
-    return newest_file
+Hi Team,
 
-# Example usage
-dir_path = '/Users/YOURUSERNAME/DBID_Automation/Report'
-print(get_newest_file(dir_path))
+As today marks my last working day, I just wanted to take a moment to thank each and every one of you from the bottom of my heart. Working with this team has been one of the most meaningful and enjoyable experiences of my career.
+
+I’ve learned so much, laughed a lot, and grown both personally and professionally because of the amazing people around me. The support, teamwork, and positivity here made every challenge easier and every success more special.
+
+I truly loved being part of this team, and if an opportunity ever comes up in the future, I would be more than happy to rejoin, learn, and grow together once again.
+
+Thank you all for the memories, the encouragement, and the friendship. I’ll always carry them with me wherever I go. Wishing you continued success and happiness ahead.
+
+With heartfelt gratitude,
+Murali Tharan
