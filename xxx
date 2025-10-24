@@ -3,14 +3,10 @@ Carelon Global Solutions, Bangalore (Oct 2022 – Present)
 Role: Senior Analyst
 
 Roles & Responsibilities:
-	•	Leading Enterprise Database Governance and SSIS Automation initiatives for over 30,000+ database instances.
-	•	Developing and maintaining ETL pipelines using SSIS integrated with Python for automated job monitoring.
-	•	Designing AWS-based solutions (RDS, S3, EC2) to enhance ETL performance and scalability.
-	•	Managing ID vaulting and password rotation through CyberArk, ensuring data protection and compliance.
-	•	Building Power BI dashboards to track vaulted and unvaulted accounts for real-time insights.
-	•	Automating ETL job sequencing and monitoring using Python and AWS CloudWatch for release management efficiency.
+	
+Leading enterprise-level database governance and automation initiatives by managing 30,000+ database instances. Skilled in developing and optimizing SSIS ETL pipelines with Python integration for automation and performance enhancement. Experienced in designing AWS-based solutions (RDS, S3, EC2), managing secure ID vaulting through CyberArk, and creating Power BI dashboards for real-time insights. Automated ETL sequencing and monitoring using Python and AWS CloudWatch to improve release efficiency and operational reliability.
 
-Achievements:
+
 	•	🏆 Best Performer Award (Q2) for automating database governance, saving 15+ manual hours weekly.
 	•	📜 Letter of Appreciation for securing and managing 13,000+ service IDs within CyberArk vaults.
 	•	💡 Improved query performance and operational efficiency through advanced SQL tuning and Python automation.
